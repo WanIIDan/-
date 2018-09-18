@@ -4,21 +4,15 @@
         <router-link :to="{path: '/login', 
             query: {userinfo: 'name is wangcai'}}">
         跳转到登录</router-link>
-<<<<<<< HEAD
-=======
         <button @click="handleGetData">发送数据</button>
         <button @click="getJsonp">获得Jsonp数据</button>
         <!-- <button @click="getJsonp2">利用插件获取Jsonp数据</button> -->
         <button @click="getNoSimple">post非简单请求</button>
->>>>>>> vue-03-跨域
+        <button @click="handleEnd">使用uve框架跨域</button>
     </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-    export default {
-        name: "home"
-=======
     import axios from 'axios'
     // import jsonp from 'jsonp'
 
@@ -56,9 +50,13 @@
                 }).catch(err=>{
                     console.log('err',err)
                 })
+            },
+            handleEnd() {
+                axios.get('/api/getMsg').then(res=>{
+                    console.log(res)
+                })
             }
         }
->>>>>>> vue-03-跨域
     }
 </script>
 
